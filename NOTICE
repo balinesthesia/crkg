@@ -1,0 +1,86 @@
+crkg
+Copyright 2026 Kresna Sucandra and crkg contributors
+
+This product is licensed under the Apache License, Version 2.0.
+See LICENSE for the full license text.
+
+----
+
+ORIGIN NOTE
+
+Portions of this repository originate as an extraction from the `/mkg/`
+directory of a proprietary clinical decision support system authored by
+the same copyright holder. The extracted code has been re-licensed under
+Apache-2.0 by the same copyright holder, and restructured to:
+
+  - Consume `crkg-schema` (Apache-2.0) as the data contract source
+  - Abstract graph backend access behind a `GraphStore` Protocol
+  - Replace direct traditional-medicine ingestion with a pluggable
+    `TraditionalMedicineAdapter` Protocol
+  - Remove any hardcoded coupling to proprietary data sources
+
+The original `/mkg/` directory is retired from its origin project in the
+same release cycle that this package publishes its first stable version
+(v0.1.0). No long-term duplicate code is maintained.
+
+See `docs/MIGRATION_FROM_MKG.md` for details.
+
+----
+
+THIRD-PARTY ATTRIBUTIONS
+
+This package uses the following third-party libraries at runtime.
+Each carries its own license; this NOTICE does not modify those licenses.
+
+Runtime dependencies:
+  - crkg-schema (Apache-2.0)       — https://github.com/balinesthesia/crkg-schema
+  - Neo4j Python Driver (Apache-2.0) — https://github.com/neo4j/neo4j-python-driver
+  - Qdrant client (Apache-2.0)     — https://github.com/qdrant/qdrant-client
+  - Pydantic v2 (MIT)              — https://docs.pydantic.dev/
+  - PyYAML (MIT)                   — https://pyyaml.org/
+
+Development tooling:
+  - uv (MIT OR Apache-2.0)         — https://github.com/astral-sh/uv
+  - ruff (MIT)                     — https://github.com/astral-sh/ruff
+  - mypy (MIT)                     — https://github.com/python/mypy
+  - pytest (MIT)                   — https://pytest.org/
+  - testcontainers-python (Apache-2.0) — https://testcontainers-python.readthedocs.io/
+  - hatchling (MIT)                — https://hatch.pypa.io/
+
+----
+
+GRAPH BACKEND LICENSING (INFORMATIONAL)
+
+`crkg` is a client of external graph databases. It does not bundle,
+embed, or statically link any graph database server. Deployers are
+responsible for installing, running, and licensing their own graph
+backend:
+
+  - Neo4j Community Edition (GPL-3.0) — default backend, client-server
+    separation preserves this package's Apache-2.0 posture.
+    https://github.com/neo4j/neo4j
+
+  - Memgraph Community Edition (BSL 1.1 with Additional Use Grant) —
+    planned optional backend in v0.2+. Source-available, not OSI-approved
+    open source; converts to Apache-2.0 four years after each release.
+    https://github.com/memgraph/memgraph
+
+----
+
+CLINICAL TERMINOLOGY REFERENCES
+
+This package parses formats from several clinical and biomedical
+terminology systems but does NOT redistribute, embed, or bundle them.
+Deployers populating `crkg` with data from these systems remain
+responsible for compliance with each system's license and terms of use:
+
+  - ICD-11 (WHO)                    — https://icd.who.int/
+  - ICD-10-CM (CMS)                 — https://www.cms.gov/
+  - SNOMED CT (SNOMED International) — https://www.snomed.org/
+  - LOINC (Regenstrief)             — https://loinc.org/
+  - RxNorm (NLM)                    — https://www.nlm.nih.gov/research/umls/rxnorm/
+  - ATC (WHO CC)                    — https://www.whocc.no/atc/
+  - MeSH (NLM)                      — https://www.ncbi.nlm.nih.gov/mesh/
+
+Some require registration, affiliate licensing, or UMLS authentication
+to access. `crkg` does not and cannot distribute content from them.
