@@ -183,4 +183,4 @@ The loaders, Cypher schema, and Qdrant sync pipeline in this repository originat
 ## Version log
 
 - **v0.0 (2026-04-19):** Initial scaffold. Documentation-only. M0 infrastructure starting.
-- 
+-

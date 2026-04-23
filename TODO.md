@@ -32,26 +32,26 @@
 ## Phase 1 — Legal & Governance (target v0.0.1)
 
 ### M0-T01 — Commit `LICENSE` (Apache-2.0)
-- [ ] **Status:** TODO
+- [x] **Status:** DONE
 - **Dependency:** —
 - **Notes:** Full Apache-2.0 text. Copyright line: `Copyright 2026 Kresna Sucandra and crkg contributors`.
 
 ### M0-T02 — Commit `NOTICE` with origin note
-- [ ] **Status:** TODO
+- [x] **Status:** DONE
 - **Dependency:** M0-T01
 - **Notes:** Attribution for `neo4j` driver, Qdrant client, Pydantic, LinkML runtime (via crkg-schema), PyYAML. **Origin note**: code extracted from a proprietary CDSS's `/mkg/` folder, re-licensed under Apache-2.0 with the same copyright holder's consent. See [A§6].
 
 ### M0-T03 — Commit `SECURITY.md`
-- [ ] **Status:** TODO
+- [x] **Status:** DONE
 - **Dependency:** —
 - **Notes:** Private disclosure process. Email placeholder.
 
 ### M0-T04 — Commit `CODE_OF_CONDUCT.md`
-- [ ] **Status:** TODO
+- [x] **Status:** DONE
 - **Dependency:** —
 
 ### M0-T05 — Add `.github/CODEOWNERS`
-- [ ] **Status:** TODO
+- [x] **Status:** DONE
 - **Dependency:** —
 - **Notes:** `* @SHA888` for bootstrap.
 
@@ -65,34 +65,34 @@
 ## Phase 2 — Python toolchain (target v0.0.1)
 
 ### M0-T10 — Create `pyproject.toml`
-- [ ] **Status:** TODO
+- [x] **Status:** DONE
 - **Dependency:** M0-T01
 - **Notes:** Build backend `hatchling`. Python `>=3.13`. Core deps: `crkg-schema>=0.1,<0.2` (placeholder until schema publishes), `pydantic>=2.0`, `neo4j>=5.0`, `qdrant-client`. Dev deps: `pytest`, `pytest-cov`, `testcontainers`, `ruff`, `mypy`.
 
 #### M0-T10.1 — Configure hatchling for `src/` layout
-- [ ] Source dir `src/crkg`
-- [ ] Package data: none — no bundled terminologies
+- [x] Source dir `src/crkg`
+- [x] Package data: none — no bundled terminologies
 
 #### M0-T10.2 — Configure ruff and mypy strict
-- [ ] Strict mypy, no implicit Any
-- [ ] Ruff: E, F, I, N, UP, B, SIM, ANN
+- [x] Strict mypy, no implicit Any
+- [x] Ruff: E, F, I, N, UP, B, SIM, ANN
 
 ### M0-T11 — Pin Python in `.python-version`
-- [ ] **Status:** TODO
+- [x] **Status:** DONE
 - **Dependency:** M0-T10
 - **Notes:** `3.13`.
 
 ### M0-T12 — Commit `uv.lock`
-- [ ] **Status:** TODO
+- [x] **Status:** DONE
 - **Dependency:** M0-T10
 
 ### M0-T13 — Verify `uv sync` on cold clone
-- [ ] **Status:** TODO
+- [x] **Status:** DONE
 - **Dependency:** M0-T12
 - **Notes:** Linux, macOS tested; Windows best-effort.
 
 ### M0-T14 — `.pre-commit-config.yaml`
-- [ ] **Status:** TODO
+- [x] **Status:** DONE
 - **Dependency:** M0-T10
 - **Notes:** ruff, mypy, check-merge-conflict, trailing-whitespace, end-of-file-fixer, check-yaml, detect-private-key, gitleaks.
 
